@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS clients;
 
 CREATE TABLE clients (
-  ClientID,
-  FirstName,
-  LastName,
-  Phone,
+  ClientID bigint NOT NULL,
+  FirstName varchar,
+  LastName varchar,
+  Phone int,
   CellPhone int,
   Address varchar,
   Gender varchar,

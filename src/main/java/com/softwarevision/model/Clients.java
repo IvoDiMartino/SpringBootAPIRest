@@ -32,70 +32,62 @@ public class Clients {
 		return ClientID;
 	}
 	public void setClientID(Long clientID) {
-		ClientID = clientID;
+		this.ClientID = clientID;
 	}
 	
 	public String getFirstName() {
 		return FirstName;
 	}
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		this.FirstName = firstName;
 	}
 	
 	public String getLastName() {
 		return LastName;
 	}
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.LastName = lastName;
 	}
 	
 	public int getPhone() {
 		return Phone;
 	}
 	public void setPhone(int phone) {
-		Phone = phone;
+		this.Phone = phone;
 	}
 	
 	public int getCellPhone() {
 		return CellPhone;
 	}
 	public void setCellPhone(int cellPhone) {
-		CellPhone = cellPhone;
+		this.CellPhone = cellPhone;
 	}
 	
 	public String getAddress() {
 		return Address;
 	}
 	public void setAddress(String address) {
-		Address = address;
+		this.Address = address;
 	}
 	
 	public String getGender() {
 		return Gender;
 	}
 	public void setGender(String gender) {
-		Gender = gender;
+		this.Gender = gender;
 	}
 	
 	public String getPassword() {
 		return Password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.Password = password;
 	}
 	
 	public String getEmail() {
 		return Email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.Email = email;
 	}
-	
-	@Override
-	public String toString() {
-		return "Clients [ClientID=" + ClientID + ", FirstName=" + FirstName + ", LastName=" + LastName + ", Phone="
-				+ Phone + ", CellPhone=" + CellPhone + ", Address=" + Address + ", Gender=" + Gender + ", Password="
-				+ Password + ", Email=" + Email + "]";
-	}
-	
 }
