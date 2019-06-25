@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -19,10 +18,9 @@ import com.softwarevision.repositories.ClientsRepository;
 
 //Spring REST Service
 @RestController
-
-//Base URL
 @RequestMapping("API/V1/Clients")
 public class ClientsController<ClientID> {
+	
 	// Importing ClientsRepository to use CRUD methods
 	@Autowired
 	private ClientsRepository CR;
@@ -34,9 +32,9 @@ public class ClientsController<ClientID> {
 	}
 	
 	// Create Method
-	@PostMapping("/Create")
+	@PostMapping("/create")
 	@ResponseStatus(HttpStatus.OK)
-	public void Create(@RequestBody Clients clients) {
+	public void create(@RequestBody Clients clients) {
 		CR.save(clients);
 	}
 	
@@ -51,17 +49,10 @@ public class ClientsController<ClientID> {
 			return null;
 		}
 	}
-	
-	// Update Method
-	@PutMapping("/Update/{ClientID}")
-    @ResponseStatus(HttpStatus.OK)
-    public void Update(@PathVariable long ClientID, @RequestBody Clients clients){
-		CR.save(clients);
-	}
-	
+
 	// Delete Method
-	@DeleteMapping("/Delete/{ClientID}")
-	public String Delete(@PathVariable long ClientID) {
+	@DeleteMapping("/delete/{ClientID}")
+	public String delete(@PathVariable long ClientID) {
 		if (CR.existsById(ClientID)) {
 			// If ClientID was found
 				CR.deleteById(ClientID);

@@ -1,5 +1,6 @@
 package com.softwarevision.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +9,6 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-
 @Entity
 public class Clients {
 	// "Clients" Table fields.
@@ -16,15 +16,31 @@ public class Clients {
 	// Making ClientID autogenerate
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ClientID")
 	private Long ClientID;
 	
-	private String FirstName;
-	private String LastName;
+	@Column(name = "First_Name")
+	private String firstName;
+	
+	@Column(name = "Last_Name")
+	private String lastName;
+	
+	@Column(name = "Phone")
 	private int Phone;
-	private int CellPhone;
+	
+	@Column(name = "Cell_Phone")
+	private int cellPhone;
+	
+	@Column(name = "Address")
 	private String Address;
+	
+	@Column(name = "Gender")
 	private String Gender;
+	
+	@Column(name = "Password")
 	private String Password;
+	
+	@Column(name = "Email")
 	private String Email;
 	
 	// Generating Getters and Setters
@@ -36,17 +52,17 @@ public class Clients {
 	}
 	
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
 	public void setFirstName(String firstName) {
-		this.FirstName = firstName;
+		this.firstName = firstName;
 	}
 	
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 	public void setLastName(String lastName) {
-		this.LastName = lastName;
+		this.lastName = lastName;
 	}
 	
 	public int getPhone() {
@@ -57,10 +73,10 @@ public class Clients {
 	}
 	
 	public int getCellPhone() {
-		return CellPhone;
+		return cellPhone;
 	}
 	public void setCellPhone(int cellPhone) {
-		this.CellPhone = cellPhone;
+		this.cellPhone = cellPhone;
 	}
 	
 	public String getAddress() {
